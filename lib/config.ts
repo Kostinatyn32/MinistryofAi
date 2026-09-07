@@ -1,0 +1,1 @@
+export function leadsReady(){return Boolean(process.env.LEAD_WEBHOOK_URL&&process.env.LEAD_WEBHOOK_SECRET&&process.env.RATE_LIMIT_REST_URL&&process.env.RATE_LIMIT_REST_TOKEN&&process.env.LEGAL_READY==='true');}
