@@ -1,5 +1,5 @@
 import {PageHeading,FinalCTA} from '@/components/sections';
 import {capabilityGroups} from '@/lib/content';
 import {JsonLd} from '@/components/seo';
-export const metadata={title:'Можливості AI-агента',description:'Від першого запитання до зустрічі: природний діалог, база знань, ліди, аналітика, нагадування, канали та API в одному робочому процесі.',alternates:{canonical:'/mozhlyvosti'}};
+export const metadata={title:'Можливості AI-агента для продажів',description:'Можливості AI-агента для продажів: діалоги, база знань, кваліфікація лідів, аналітика, канали та передача менеджеру.',alternates:{canonical:'/mozhlyvosti'}};
 export default function Page(){return <main id="main"><JsonLd path="/mozhlyvosti" title="Можливості"/><div className="container"><PageHeading title="Від повідомлення до наступного кроку" description="Агент працює з контекстом вашого бізнесу, а менеджер долучається там, де потрібна людина."/><div className="capability-layout"><nav aria-label="Розділи можливостей" className="side-nav">{capabilityGroups.map((g,i)=><a href={`#group-${i}`} key={g.title}>{g.title}</a>)}</nav><div>{capabilityGroups.map((g,i)=><section className="capability-group" id={`group-${i}`} key={g.title}><h2>{g.title}</h2><p>{g.description}</p><ol className="numbered-list">{g.items.map(item=><li key={item}>{item}</li>)}</ol></section>)}</div></div></div><FinalCTA/></main>}
