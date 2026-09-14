@@ -51,9 +51,10 @@ function isGroupActive(path: string, group: NavGroup) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [activeGroup, setActiveGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const path = usePathname();
-  useEffect(() => { setOpen(false); }, [path]);
+  useEffect(() => { setOpen(false); setActiveGroup(null); }, [path]);
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
     handler();
@@ -61,7 +62,7 @@ export function Header() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
   return <header className={scrolled ? 'header scrolled' : 'header'}><div className="container header-inner"><Brand/>
-    <nav className="desktop-nav" aria-label="Основне меню">{navigation.map((group) => <details className="desktop-nav-group" key={group.label}><summary aria-current={isGroupActive(path, group) ? 'page' : undefined}>{group.label}<ChevronDown size={14}/></summary><div className="desktop-nav-panel">{group.items.map((item) => <Link href={item.href} key={item.href}><strong>{item.label}</strong><small>{item.description}</small></Link>)}</div></details>)}</nav>
+    <nav className="desktop-nav" aria-label="Основне меню">{navigation.map((group) => <details className="desktop-nav-group" key={group.label} open={activeGroup === group.label} onToggle={(event) => setActiveGroup(event.currentTarget.open ? group.label : null)}><summary aria-current={isGroupActive(path, group) ? 'page' : undefined}>{group.label}<ChevronDown size={14}/></summary><div className="desktop-nav-panel">{group.items.map((item) => <Link href={item.href} key={item.href}><strong>{item.label}</strong><small>{item.description}</small></Link>)}</div></details>)}</nav>
     <Button asChild className="header-cta"><Link href="/start?plan=demo">Податися на пілот</Link></Button>
     <Dialog.Root open={open} onOpenChange={setOpen}><Dialog.Trigger asChild><button className="menu-toggle" aria-label="Відкрити меню"><Menu/></button></Dialog.Trigger><Dialog.Portal><Dialog.Overlay className="overlay"/><Dialog.Content className="mobile-menu"><Dialog.Title>Меню</Dialog.Title><Dialog.Description className="sr-only">Навігація сайтом</Dialog.Description><Dialog.Close className="close-button" aria-label="Закрити меню"><X/></Dialog.Close><Brand/><nav>{navigation.map((group) => <section className="mobile-nav-group" key={group.label}><strong>{group.label}</strong>{group.items.map((item) => <Link href={item.href} key={item.href} onClick={() => setOpen(false)}><span>{item.label}</span><small>{item.description}</small></Link>)}</section>)}<Link className="mobile-pilot-link" href="/start?plan=demo" onClick={() => setOpen(false)}>Податися на пілот</Link></nav></Dialog.Content></Dialog.Portal></Dialog.Root>
   </div></header>;
