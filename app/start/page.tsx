@@ -4,7 +4,7 @@ import { OnboardingPreview } from '@/components/activation-tools';
 import { leadsReady } from '@/lib/config';
 import { JsonLd } from '@/components/seo';
 
-export const metadata = { title: 'Податися на пілот', description: 'Розкажіть про свій бізнес — разом підготуємо безпечний пілот AI-продавця на одному каналі.', alternates: { canonical: '/start' }, robots: { index: false, follow: true } };
+export const metadata = { title: 'Податися на пілот', description: 'Розкажіть про свій бізнес - разом підготуємо безпечний пілот AI-продавця на одному каналі.', alternates: { canonical: '/start' }, robots: { index: false, follow: true } };
 
 export default async function StartPage({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
   const query = await searchParams;

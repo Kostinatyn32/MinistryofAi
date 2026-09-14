@@ -17,13 +17,13 @@ const scenarios = {
     label: 'Послуги та запис',
     opening: 'Вітаю! Підкажу щодо послуги та допоможу підібрати зручний наступний крок. Яке питання маєте?',
     prompts: ['Хочу записатися на консультацію', 'Скільки це коштує?', 'Чи є вільний час цього тижня?'],
-    answer: 'Щоб запропонувати доречний варіант, уточню послугу й бажаний день. Вільні слоти та остаточне підтвердження перевіряються у підключеному календарі; якщо його немає — діалог бере менеджер.',
+    answer: 'Щоб запропонувати доречний варіант, уточню послугу й бажаний день. Вільні слоти та остаточне підтвердження перевіряються у підключеному календарі; якщо його немає - діалог бере менеджер.',
   },
   b2b: {
     label: 'B2B-кваліфікація',
     opening: 'Вітаю! Допоможу зрозуміти, чи підходить рішення вашій команді. Розкажіть коротко про задачу.',
     prompts: ['Потрібно автоматизувати заявки з трьох каналів', 'Чи інтегруєтесь з CRM?', 'Хочу зрозуміти бюджет'],
-    answer: 'Зберу лише потрібний контекст: нішу, канали, обсяг звернень і бажаний результат. Після цього агент передає підготовлений запит менеджеру — без обіцянок інтеграції, яку ще не перевірили.',
+    answer: 'Зберу лише потрібний контекст: нішу, канали, обсяг звернень і бажаний результат. Після цього агент передає підготовлений запит менеджеру - без обіцянок інтеграції, яку ще не перевірили.',
   },
 } as const;
 
@@ -53,7 +53,7 @@ export function LossCalculator() {
   const [replyDelay, setReplyDelay] = useState(180);
   const [leadValue, setLeadValue] = useState(650);
   const result = useMemo(() => Math.round(messages * (afterHours / 100) * Math.min(replyDelay / 600, 0.55) * leadValue), [messages, afterHours, replyDelay, leadValue]);
-  return <section className="tool-card" aria-labelledby="loss-title"><div><span className="tool-kicker">Калькулятор</span><h2 id="loss-title">Скільки звернень лишається без відповіді?</h2><p>Орієнтир для розмови про пілот, а не прогноз доходу. Розрахунок не враховує сезонність, якість трафіку й роботу менеджерів.</p></div><div className="tool-fields"><NumberField label="Звернень на місяць" value={messages} onChange={setMessages}/><NumberField label="Частка поза робочим часом" value={afterHours} onChange={setAfterHours} suffix="%"/><NumberField label="Час до відповіді" value={replyDelay} onChange={setReplyDelay} suffix="хв"/><NumberField label="Орієнтовна цінність ліда" value={leadValue} onChange={setLeadValue} suffix="€"/></div><div className="tool-result"><span>Потенційна цінність звернень, які ризикують охолонути</span><strong>≈ €{result.toLocaleString('uk-UA')} / міс.</strong><small>Оцінимо точніше на пілоті — за вашими каналами та реальними даними.</small></div></section>;
+  return <section className="tool-card" aria-labelledby="loss-title"><div><span className="tool-kicker">Калькулятор</span><h2 id="loss-title">Скільки звернень лишається без відповіді?</h2><p>Орієнтир для розмови про пілот, а не прогноз доходу. Розрахунок не враховує сезонність, якість трафіку й роботу менеджерів.</p></div><div className="tool-fields"><NumberField label="Звернень на місяць" value={messages} onChange={setMessages}/><NumberField label="Частка поза робочим часом" value={afterHours} onChange={setAfterHours} suffix="%"/><NumberField label="Час до відповіді" value={replyDelay} onChange={setReplyDelay} suffix="хв"/><NumberField label="Орієнтовна цінність ліда" value={leadValue} onChange={setLeadValue} suffix="€"/></div><div className="tool-result"><span>Потенційна цінність звернень, які ризикують охолонути</span><strong>≈ €{result.toLocaleString('uk-UA')} / міс.</strong><small>Оцінимо точніше на пілоті - за вашими каналами та реальними даними.</small></div></section>;
 }
 
 export function RoiCalculator() {

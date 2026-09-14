@@ -21,7 +21,7 @@ export function LeadForm({ formId = 'demo', plan = '', market = '', ready = fals
     setFailure('');
     if (!ready) {
       const subject = encodeURIComponent('Заявка на пілот AI-продавця');
-      const body = encodeURIComponent(`Імʼя: ${data.name}\nКонтакт: ${data.contact}\nБізнес: ${data.business || '—'}\nЗвернень на місяць: ${data.volume || '—'}\nПлан: ${data.plan || 'demo'}\nРинок: ${data.market || '—'}`);
+      const body = encodeURIComponent(`Імʼя: ${data.name}\nКонтакт: ${data.contact}\nБізнес: ${data.business || '-'}\nЗвернень на місяць: ${data.volume || '-'}\nПлан: ${data.plan || 'demo'}\nРинок: ${data.market || '-'}`);
       track('demo_form_started', { form_id: formId, delivery: 'email_fallback' });
       window.location.href = `mailto:info@ministrysale.org?subject=${subject}&body=${body}`;
       return;
@@ -41,7 +41,7 @@ export function LeadForm({ formId = 'demo', plan = '', market = '', ready = fals
   return <form onSubmit={handleSubmit(submit)} className="lead-form" noValidate>
     <h2>{formId === 'partner' ? 'Обговорімо партнерство' : 'Податися на пілот'}</h2>
     <p>Залиште контакт, за яким вам зручно спілкуватись.</p>
-    {!ready && <div className="form-notice">Поки налаштовуємо автоматичну доставку заявок. Після натискання відкриється лист із заповненими даними — його потрібно надіслати. Або напишіть у <a href="https://t.me/tripailo_ads">Telegram</a>.</div>}
+    {!ready && <div className="form-notice">Поки налаштовуємо автоматичну доставку заявок. Після натискання відкриється лист із заповненими даними - його потрібно надіслати. Або напишіть у <a href="https://t.me/tripailo_ads">Telegram</a>.</div>}
 
     <label htmlFor={`${formId}-name`}>Ваше імʼя</label>
     <input id={`${formId}-name`} autoComplete="given-name" placeholder="Як до вас звертатись?" {...register('name')} aria-invalid={!!errors.name} aria-describedby={errors.name ? `${formId}-name-error` : undefined}/>

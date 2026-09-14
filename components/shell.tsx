@@ -33,7 +33,7 @@ export const navigation: NavGroup[] = [
   { label: 'Ресурси', items: [
     { label: 'Блог', href: '/blog', description: 'Практичні матеріали про AI у продажах' },
     { label: 'Інструменти', href: '/resursy', description: 'Калькулятори й чеклісти' },
-    { label: 'Автоматизація продажів', href: '/resursy/avtomatyzatsiya-prodazhiv', description: 'Що віддати AI, а що — команді' },
+    { label: 'Автоматизація продажів', href: '/resursy/avtomatyzatsiya-prodazhiv', description: 'Що віддати AI, а що - команді' },
     { label: 'Кейси', href: '/keisy', description: 'Як підходимо до вимірювання результату' },
     { label: 'Безпека', href: '/bezpeka', description: 'Дані, доступи й контрольований запуск' }
   ]}
