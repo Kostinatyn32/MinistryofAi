@@ -1,6 +1,6 @@
 import { ClusterPage } from '@/components/cluster-page';
 
-export const metadata = { title: 'Автоматизація продажів за допомогою AI', description: 'Що можна віддати AI у відділі продажів, де потрібен менеджер, як передавати ліди та з чого починати автоматизацію.', alternates: { canonical: '/resursy/avtomatyzatsiya-prodazhiv' } };
+export const metadata = { title: 'Автоматизація продажів за допомогою AI', description: 'Практичний гід з автоматизації продажів за допомогою AI: що делегувати агенту, що залишити менеджеру, як передавати ліди та почати з безпечного сценарію.', alternates: { canonical: '/resursy/avtomatyzatsiya-prodazhiv' } };
 
 const faq = [
   ['З якого процесу почати автоматизацію?', 'З одного повторюваного типу звернень, де можна визначити правильний результат і роль менеджера.'],

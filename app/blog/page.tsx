@@ -7,7 +7,7 @@ import { PageHeading, FinalCTA } from '@/components/sections';
 
 export const metadata: Metadata = {
   title: 'Блог про AI для продажів',
-  description: 'Практичні матеріали про AI-агентів, кваліфікацію лідів, автоматизацію переписок, CRM та безпечне впровадження AI у продажі.',
+  description: 'Практичні статті про AI-агентів для продажів: кваліфікацію лідів, автоматизацію переписок, CRM, інтеграції та безпечне впровадження AI у робочі процеси команди.',
   alternates: { canonical: '/blog' }
 };
 
