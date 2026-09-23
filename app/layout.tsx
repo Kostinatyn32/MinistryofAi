@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import './cluster.css';
+import './faq.css';
 import {Header,Footer} from '@/components/shell';
 import {Consent} from '@/components/consent';
 const onest=localFont({src:[{path:'../node_modules/@fontsource-variable/onest/files/onest-cyrillic-wght-normal.woff2'},{path:'../node_modules/@fontsource-variable/onest/files/onest-latin-wght-normal.woff2'}],variable:'--font-onest',display:'swap'});
