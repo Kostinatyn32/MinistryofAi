@@ -8,8 +8,8 @@ import { SeoBlock } from '@/components/seo-block';
 import { PageHeading } from '@/components/sections';
 
 export const metadata = {
-  title: 'Демо AI-агента для продажів',
-  description: 'Замовте демо AI-агента для продажів: розберемо типові діалоги, оберемо перший сценарій, перевіримо канал і визначимо безпечний наступний крок для команди.',
+  title: 'Коротка консультація про AI-продавця',
+  description: 'Запишіться на коротку консультацію: розберемо типові діалоги, підберемо перший сценарій AI-продавця, перевіримо канал і визначимо наступний крок.',
   alternates: { canonical: '/demo' }
 };
 
@@ -25,8 +25,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
   const market = query.market === 'ua' || query.market === 'eu' ? query.market : '';
 
   return <main id="main" className="container">
-    <JsonLd path="/demo" title="Демо AI-агента для продажів" faq={faq}/>
-    <PageHeading title="Демо AI-агента для продажів" description="На короткій розмові розберемо ваші типові діалоги, визначимо перший контрольований сценарій і пояснимо, що потрібно перевірити до підключення каналу."/>
+    <JsonLd path="/demo" title="Коротка консультація про AI-продавця" faq={faq}/>
+    <PageHeading title="Запишіться на коротку консультацію" description="За 15 хвилин розберемо ваші типові звернення, підберемо перший реалістичний сценарій AI-продавця та визначимо наступний крок. Залиште заявку, щоб узгодити зручний час."/>
     <div className="contact-layout">
       <div className="demo-expect">
         <CalendarDays size={38} strokeWidth={1.2}/><h2>Що отримаєте на демо</h2>
