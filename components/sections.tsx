@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -27,6 +28,7 @@ const painContexts = ['Після робочого дня', 'У кількох �
 export function PainSection() {
   return <section className="section container">
     <div className="section-intro"><span className="section-label">Знайомі ситуації</span><h2>Скільки клієнтів ви втратили, поки писали цей рядок</h2></div>
+    <figure className="pain-photo"><Image src="/after-hours-inquiries.webp" alt="Власниця малого бізнесу перевіряє звернення клієнтів після робочого дня" fill sizes="(max-width: 767px) 100vw, 1200px"/><figcaption><span>Після робочого дня</span><strong>Клієнт уже написав. Хто відповість?</strong></figcaption></figure>
     <div className="pain-grid">{pains.map((pain, index) => <article key={pain}><PainSituationIcon index={index}/><p>{pain}</p><span className="pain-context">{painContexts[index]}</span></article>)}</div>
     <p className="closing-line">Кожен непрочитаний діалог це гроші, які пішли до конкурента. AI-агент закриває цей розрив за секунди.</p>
   </section>;
@@ -108,6 +110,7 @@ export function DifferenceSection() {
       <p>Тому агент не просто відповідає. Він кваліфікує, веде до наступного кроку і передає менеджеру рівно тоді, коли це потрібно.</p>
     </div></div>
     <MethodologyVisual/>
+    <figure className="handoff-photo"><Image src="/human-handoff.webp" alt="Менеджер переглядає контекст звернення перед розмовою з клієнтом" fill sizes="(max-width: 767px) 100vw, 1200px"/><figcaption><span>Людина залишається в контурі</span><strong>AI готує контекст. Менеджер продовжує розмову.</strong></figcaption></figure>
     <div className="difference-grid">{differences.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
     <Button asChild variant="outline"><a href="https://ministrysale.com/ai-agent">Дізнатись про повний супровід <ArrowUpRight size={18}/></a></Button>
   </div></section>;
