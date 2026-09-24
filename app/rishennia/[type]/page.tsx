@@ -5,6 +5,7 @@ import { FAQ } from '@/components/faq';
 import { FinalCTA, PageHeading } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SeoBlock } from '@/components/seo-block';
+import { SolutionScenarioFlow } from '@/components/product-visuals';
 
 type Solution = {
   title: string;
@@ -76,6 +77,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ type:
     <div className="container">
       <PageHeading title={item.title} description={item.description}/>
       <section className="solution-hero"><div><span className="section-label">Проблема клієнта</span><h2>{item.goal}</h2></div><div className="solution-pilot"><MessageCircleMore size={26}/><strong>Кому підходить сценарій</strong><p>{item.audience}</p></div></section>
+      <SolutionScenarioFlow kind={type as 'ecommerce' | 'poslugy' | 'b2b'}/>
       <section className="section two-columns"><div><span className="section-label">Функціональність</span><h2>Що AI бере на себе в першому діалозі</h2></div><ul className="check-list">{item.capabilities.map((capability) => <li key={capability}><Check size={18}/>{capability}</li>)}</ul></section>
       <section className="section two-columns"><div><span className="section-label">Сценарій пілоту</span><h2>Як перевіряємо цінність</h2></div><ol className="numbered-list">{item.flow.map((step) => <li key={step}>{step}</li>)}</ol></section>
       <section className="section evidence-panel"><span className="section-label">Приклад</span><h2>Як це виглядає у робочому процесі</h2><p className="difference-copy">{item.example}</p></section>

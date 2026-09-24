@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { Check, CircleAlert } from 'lucide-react';
 import { FAQ } from '@/components/faq';
 import { FinalCTA, PageHeading } from '@/components/sections';
@@ -9,7 +10,7 @@ type LinkItem = { href: string; label: string; description: string };
 type Section = { title: string; paragraphs: string[]; items?: string[] };
 
 export function ClusterPage({
-  path, title, description, label, goal, sections, faq, links, note
+  path, title, description, label, goal, sections, faq, links, note, visual
 }: {
   path: string;
   title: string;
@@ -20,6 +21,7 @@ export function ClusterPage({
   faq: string[][];
   links: LinkItem[];
   note?: string;
+  visual?: ReactNode;
 }) {
   return <main id="main">
     <JsonLd path={path} title={title} faq={faq}/>
@@ -29,6 +31,7 @@ export function ClusterPage({
         <div><span className="section-label">{label}</span><h2>{goal}</h2></div>
         <div className="cluster-note"><CircleAlert size={23}/><p>{note || 'Починаємо з одного зрозумілого сценарію, фіксуємо межі відповідей і перевіряємо результат разом із командою до масштабування.'}</p></div>
       </section>
+      {visual}
       <div className="cluster-sections">
         {sections.map((section, index) => <section className="cluster-section" key={section.title}>
           <span className="cluster-number">0{index + 1}</span>

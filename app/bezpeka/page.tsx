@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { AlertTriangle, Check, LockKeyhole, ShieldCheck, UserRoundCheck } from 'lucide-react';
+import { CircleStop, ClipboardCheck, Database, KeyRound, ShieldCheck, UserRoundCheck, Workflow } from 'lucide-react';
 import { FAQ } from '@/components/faq';
 import { FinalCTA, PageHeading } from '@/components/sections';
 import { JsonLd } from '@/components/seo';
 import { SeoBlock } from '@/components/seo-block';
+import { SecurityDataFlow } from '@/components/product-visuals';
 
 export const metadata = {
   title: 'Безпека даних AI-агента',
@@ -32,7 +33,8 @@ export default function SecurityPage() {
     <div className="container">
       <PageHeading title="Безпека даних AI-агента для продажів" description="Безпека - частина пілоту, а не дрібний шрифт. До підключення погоджуємо дані, доступи, межі відповідей, передачу менеджеру та відповідальну сторону."/>
       <section className="security-hero"><ShieldCheck size={34}/><div><h2>Що фіксуємо перед запуском</h2><p>Канал, ціль діалогу, відповідального менеджера, перелік дозволених даних, строки зберігання, спосіб видалення даних і правила передачі людині.</p></div></section>
-      <section className="section"><div className="section-intro"><span className="section-label">Контрольований старт</span><h2>Мінімальні правила безпечного пілоту</h2></div><div className="safeguard-grid">{safeguards.map(([title, text], index) => { const Icon = [LockKeyhole, UserRoundCheck, ShieldCheck, Check, Check, AlertTriangle][index]; return <article key={title}><Icon size={23}/><h3>{title}</h3><p>{text}</p></article>; })}</div></section>
+      <SecurityDataFlow/>
+      <section className="section"><div className="section-intro"><span className="section-label">Контрольований старт</span><h2>Мінімальні правила безпечного пілоту</h2></div><div className="safeguard-grid">{safeguards.map(([title, text], index) => { const Icon = [KeyRound, UserRoundCheck, Database, Workflow, ClipboardCheck, CircleStop][index]; return <article key={title}><Icon size={23}/><h3>{title}</h3><p>{text}</p></article>; })}</div></section>
       <section className="section two-columns evidence-panel"><div><span className="section-label">Що потребує технічного підтвердження</span><h2>Не публікуємо гарантії, яких не перевірили</h2></div><div className="difference-copy"><p>Провайдери моделей, географія зберігання, строки зберігання, підрядники, резервне копіювання, журнали подій і процедура видалення даних залежать від фактичної конфігурації продукту та сценарію клієнта.</p><p>Перед роботою з чутливими даними, медичними, юридичними або фінансовими рішеннями потрібен окремий процес оцінки ризиків. Конкретні умови мають бути погоджені технічною та юридичною сторонами.</p><Link className="text-link" href="/dpa">Переглянути умови обробки даних <span aria-hidden="true">→</span></Link></div></section>
       <section className="section faq-section"><div><span className="section-label">FAQ</span><h2>Питання про дані та доступи</h2></div><FAQ items={faq}/></section>
       <SeoBlock label="Безпечне впровадження" title="Перевірте сценарій до передачі доступів" paragraphs={['Спочатку визначте канал, дані та потрібну наступну дію. Це дозволяє надати лише мінімальні доступи для контрольованого тесту, а не відкривати весь процес без правил.']} links={[
