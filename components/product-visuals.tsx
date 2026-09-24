@@ -22,33 +22,6 @@ import {
   Workflow,
 } from 'lucide-react';
 
-const channels = [
-  { label: 'Telegram', Icon: Send },
-  { label: 'Instagram', Icon: Instagram },
-  { label: 'Сайт', Icon: Globe2 },
-];
-
-export function ChannelBadges() {
-  return <div className="product-channel-badges" aria-label="Канали звернень">
-    {channels.map(({ label, Icon }) => <span className="product-channel-badge" key={label}>
-      <Icon size={14} strokeWidth={1.7}/>{label}
-    </span>)}
-  </div>;
-}
-
-export function HeroSalesFlow() {
-  return <section className="hero-sales-flow" aria-label="Як проходить звернення клієнта">
-    <div className="visual-heading"><span><Workflow size={15}/> Маршрут звернення</span><small>Приклад процесу</small></div>
-    <ChannelBadges/>
-    <div className="hero-flow-connector" aria-hidden="true"><ArrowDown size={15}/></div>
-    <div className="hero-flow-agent"><span className="visual-icon"><Bot size={19}/></span><span><strong>AI-продавець</strong><small>Веде діалог за правилами бізнесу</small></span><span className="status-pill status-active"><i/> Активний</span></div>
-    <div className="hero-flow-connector" aria-hidden="true"><ArrowDown size={15}/></div>
-    <div className="hero-flow-outcomes">
-      <span><BadgeCheck size={15}/> Кваліфікація</span><ArrowRight size={14} aria-hidden="true"/><span><Database size={15}/> CRM</span><span><CalendarDays size={15}/> Зустріч</span><span><UserRoundCheck size={15}/> Менеджер</span>
-    </div>
-  </section>;
-}
-
 export function AgentProcessFlow() {
   const stages = [
     { label: 'Запит клієнта', Icon: MessageSquareText },
