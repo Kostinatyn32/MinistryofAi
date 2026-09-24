@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return { title: 'Статтю не знайдено' };
-  return { title: article.title, description: article.description, alternates: { canonical: `/blog/${article.slug}` }, openGraph: { type: 'article', title: article.title, description: article.description, images: [{ url: article.image, alt: article.imageAlt }], publishedTime: article.publishedAt, authors: [article.author] } };
+  return { title: article.metaTitle ?? article.title, description: article.description, alternates: { canonical: `/blog/${article.slug}` }, openGraph: { type: 'article', title: article.title, description: article.description, images: [{ url: article.image, alt: article.imageAlt }], publishedTime: article.publishedAt, authors: [article.author] } };
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {

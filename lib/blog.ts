@@ -3,6 +3,7 @@ export type ArticleSection = { title: string; paragraphs: string[]; items?: stri
 export type BlogArticle = {
   slug: string;
   title: string;
+  metaTitle?: string;
   description: string;
   publishedAt: string;
   author: string;
@@ -20,6 +21,7 @@ export type BlogArticle = {
 export const articles: BlogArticle[] = [{
   slug: 'ai-kvalifikatsiya-lidiv',
   title: 'AI-кваліфікація лідів: як передавати менеджеру готовий контекст',
+  metaTitle: 'AI-кваліфікація лідів: гід',
   description: 'Як побудувати AI-кваліфікацію лідів: які дані збирати, коли передавати діалог менеджеру та як перевірити сценарій до запуску.',
   publishedAt: '2026-09-13',
   author: 'Костянтин Тріпайло',
@@ -129,6 +131,7 @@ export const articles: BlogArticle[] = [{
 }, {
   slug: 'ai-prodavets-u-mesendzherah',
   title: 'AI-продавець у месенджерах: як автоматизувати переписку з клієнтами',
+  metaTitle: 'AI-продавець у месенджерах',
   description: 'Як AI веде переписку з клієнтом: відповіді, кваліфікація, база знань, передача менеджеру, CRM та підготовка першого сценарію.',
   publishedAt: '2026-09-13',
   author: 'Костянтин Тріпайло',

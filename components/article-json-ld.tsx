@@ -17,10 +17,6 @@ export function ArticleJsonLd({ article }: { article: BlogArticle }) {
       inLanguage: 'uk'
     },
     {
-      '@type': 'FAQPage',
-      mainEntity: article.faq.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } }))
-    },
-    {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Головна', item: root },
