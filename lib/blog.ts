@@ -1,3 +1,5 @@
+import { author } from '@/lib/author';
+
 export type ArticleLink = { href: string; label: string; description: string };
 export type ArticleSection = { title: string; paragraphs: string[]; items?: string[]; link?: ArticleLink };
 export type BlogArticle = {
@@ -24,7 +26,7 @@ export const articles: BlogArticle[] = [{
   metaTitle: 'AI-кваліфікація лідів: гід',
   description: 'Як побудувати AI-кваліфікацію лідів: які дані збирати, коли передавати діалог менеджеру та як перевірити сценарій до запуску.',
   publishedAt: '2026-09-13',
-  author: 'Костянтин Тріпайло',
+  author: author.name,
   readTime: '12 хв читання',
   image: '/blog/ai-lead-qualification.png',
   imageAlt: 'AI обробляє вхідні повідомлення та передає менеджеру структурований профіль ліда',
@@ -134,7 +136,7 @@ export const articles: BlogArticle[] = [{
   metaTitle: 'AI-продавець у месенджерах',
   description: 'Як AI веде переписку з клієнтом: відповіді, кваліфікація, база знань, передача менеджеру, CRM та підготовка першого сценарію.',
   publishedAt: '2026-09-13',
-  author: 'Костянтин Тріпайло',
+  author: author.name,
   readTime: '14 хв читання',
   image: '/blog/ai-sales-agent-messengers.png',
   imageAlt: 'Менеджер працює з повідомленнями клієнтів і структурованим контекстом ліда на ноутбуці',

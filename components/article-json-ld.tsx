@@ -1,4 +1,5 @@
 import type { BlogArticle } from '@/lib/blog';
+import { author as siteAuthor } from '@/lib/author';
 
 export function ArticleJsonLd({ article }: { article: BlogArticle }) {
   const root = 'https://www.ministrysale.org';
@@ -11,7 +12,7 @@ export function ArticleJsonLd({ article }: { article: BlogArticle }) {
       image: `${root}${article.image}`,
       datePublished: article.publishedAt,
       dateModified: article.publishedAt,
-      author: { '@type': 'Person', name: article.author },
+      author: { '@type': 'Person', '@id': `${root}${siteAuthor.path}#person`, name: article.author, url: `${root}${siteAuthor.path}` },
       publisher: { '@type': 'Organization', name: 'Міністерство з Продажів', url: root },
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       inLanguage: 'uk'

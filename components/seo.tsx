@@ -1,3 +1,5 @@
+import { author } from '@/lib/author';
+
 export function JsonLd({ path, title }: { faq?: string[][]; path?: string; title?: string }) {
   const root = 'https://www.ministrysale.org';
   const graph: Record<string, unknown>[] = [
@@ -8,7 +10,7 @@ export function JsonLd({ path, title }: { faq?: string[][]; path?: string; title
       name: 'Міністерство з Продажів',
       url: root,
       sameAs: ['https://ministrysale.com', 'https://t.me/tripailo_ads'],
-      founder: [{ '@type': 'Person', name: 'Костянтин Тріпайло' }, { '@type': 'Person', name: 'Андрій Тимощук' }]
+      founder: [{ '@type': 'Person', '@id': `${root}${author.path}#person`, name: author.name, url: `${root}${author.path}` }, { '@type': 'Person', name: 'Андрій Тимощук' }]
     }
   ];
 
