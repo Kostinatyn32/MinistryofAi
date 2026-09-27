@@ -14,7 +14,7 @@ export const metadata:Metadata={title:'AI-продавець для бізнес
 export default async function Home(){
   const market=await getMarket();
   return <main id="main">
-    <JsonLd faq={faq}/>
+    <JsonLd path="/" title="AI-продавець для бізнесу 24/7" description="AI-продавець відповідає клієнтам у месенджерах, кваліфікує звернення та передає менеджеру готовий контекст."/>
     <section className="hero container">
       <div className="hero-copy">
         <h1>AI-продавець для бізнесу: відповідає клієнтам 24/7</h1>

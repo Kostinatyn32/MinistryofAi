@@ -11,7 +11,6 @@ export function ArticleJsonLd({ article }: { article: BlogArticle }) {
       description: article.description,
       image: `${root}${article.image}`,
       datePublished: article.publishedAt,
-      dateModified: article.publishedAt,
       author: { '@type': 'Person', '@id': `${root}${siteAuthor.path}#person`, name: article.author, url: `${root}${siteAuthor.path}` },
       publisher: { '@type': 'Organization', name: 'Міністерство з Продажів', url: root },
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },

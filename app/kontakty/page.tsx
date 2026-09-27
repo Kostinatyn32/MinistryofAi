@@ -15,7 +15,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main id="main" className="container">
-      <JsonLd path="/kontakty" title="Контакти" />
+      <JsonLd path="/kontakty" title="Контакти Міністерства з Продажів" pageType="ContactPage" />
       <PageHeading title="Поговорімо про ваші продажі" description="Підберемо сценарій під ваш бізнес і відповімо на питання щодо агента." />
       <div className="contact-layout">
         <div className="contact-details">

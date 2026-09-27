@@ -118,7 +118,7 @@ export function DifferenceSection() {
 
 export function TrustSection() {
   const stats = [{ value: 130, suffix: '+', label: 'реалізованих проєктів' }, { value: 30, suffix: '+', label: 'ніш' }, { value: 3600, suffix: '+', label: 'годин консалтингу' }, { value: 2023, suffix: '', label: 'рік реєстрації торгової марки' }];
-  return <section className="section trust-section container"><div className="trust-grid">{stats.map(({ value, suffix, label }, index) => <div key={label}><strong><NumberTicker value={value} delay={index * .08}/>{suffix}</strong><span>{label}</span></div>)}</div><p>Компанія «Міністерство з Продажів». Будуємо системні відділи продажів для українського і європейського МСБ.</p></section>;
+  return <section className="section trust-section container"><div className="trust-grid">{stats.map(({ value, suffix, label }) => <div key={label}><strong><NumberTicker value={value}/>{suffix}</strong><span>{label}</span></div>)}</div><p>Компанія «Міністерство з Продажів». Будуємо системні відділи продажів для українського і європейського МСБ.</p></section>;
 }
 
 export function FinalCTA() {
